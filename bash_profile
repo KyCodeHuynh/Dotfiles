@@ -31,3 +31,7 @@ alias hc="/usr/local/bin/hashcat"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+if [ $ITERM_SESSION_ID ]; then
+  export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+fi
