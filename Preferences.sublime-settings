@@ -1,0 +1,44 @@
+{
+	"added_words":
+	[
+		"geospatial"
+	],
+	"atomic_save": true,
+	"auto_complete": true,
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex"
+		}
+	],
+	"bold_folder_labels": true,
+	"caret_style": "wide",
+	"color_scheme": "Packages/User/Material-Theme (Flake8Lint).tmTheme",
+	"disable_tab_abbreviations_for_scopes": "md",
+	"enable_telemetry": "false",
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"font_face": "Input Mono",
+	"font_size": 23,
+	"hot_exit": false,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Markdown"
+	],
+	"index_files": true,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"overlay_scroll_bars": "enabled",
+	"save_on_focus_lost": true,
+	"tab_completion": true,
+	"theme": "Material-Theme.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
+
