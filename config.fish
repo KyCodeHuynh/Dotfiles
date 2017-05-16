@@ -19,8 +19,7 @@ alias brake "bundle exec rake"
 
 
 
-# Original vim keybindings:
-# set -g fish_key_bindings fish_vi_key_bindings
+# Deprecated; we use Vim keybindings for navigation instead
 
 # From: https://superuser.com/questions/409594/fish-control-left-control-right-keybindings#442594
 # bind \e\[1\;5C forward-word
