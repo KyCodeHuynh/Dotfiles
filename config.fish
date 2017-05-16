@@ -1,9 +1,13 @@
 set -xg GOPATH $HOME/go
 
+# Install iTerm 2 shell integration
+# See: https://www.iterm2.com/documentation-shell-integration.html
+source ~/.iterm2_shell_integration.fish
+
 # Use vim key-bindings within fish
 # The actual bindings are in: 
 #   ~/.config/fish/functions/fish_user_key_bindings.fish
-# See also : https://fedragon.github.io/vimode-fishshell-osx/
+# See: https://fedragon.github.io/vimode-fishshell-osx/
 set fish_key_bindings fish_user_key_bindings
 #
 # Use RVM with Fish shell 
