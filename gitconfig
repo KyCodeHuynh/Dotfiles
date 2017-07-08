@@ -1,0 +1,45 @@
+[merge]
+    ff = only
+    # Fast-forward merges only, avoiding merge commits
+    # Note: this global option applies to all merges, including those done during a git pull
+    # https://git-scm.com/docs/git-config#git-config-mergeff
+[status]
+    showUntrackedFiles = all
+    # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
+    # https://git-scm.com/docs/git-config#git-config-statusshowUntrackedFiles
+[core]
+	editor = /usr/local/bin/vim
+# A nice little github-like colorful, split diff right in the console.
+# via http://owen.cymru/github-style-diff-in-terminal-with-icdiff/
+[diff]
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+# [difftool "sourcetree"]
+#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#	path = 
+[transfer]
+    fsckobjects = true
+    # To combat repository corruption!
+    # Note: this global option applies during receive and transmit
+    # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
+    # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[alias]
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !"git lg1"
+	co = checkout
+	br = branch
+	cm = commit
+	st = status
+    difft = difftool
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
