@@ -1,5 +1,8 @@
 "Ky-Cuong Huynh's Vim dotfile. Vim is the ultimate text editor!
 
+" Used for Pathogen's auto-loading of Vim plugins 
+call pathogen#infect()
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -8,30 +11,36 @@ set number
 set splitbelow
 set splitright
 set ruler
-syntax on
-colorscheme elflord
+
+syntax enable
+set background=dark
+colorscheme material-theme
+
+" Always show Airline
+set laststatus=2
+
+" Use 24-bit colors
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " Enable scrolling with trackpad in iTerm
 set mouse=a
 
-if has("gui_running")
-        syntax on 
-    colorscheme evening 
-    set bs=2
-    set number
-endif
+" Avoid this annoyance of a 'non-existent command'
+cmap W w
 
 " Faster than Escape
 :imap jk <Esc> 
 " Quickly clear search highlighting
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Used for Pathogen's auto-loading of Vim plugins 
-call pathogen#infect()
+" Quickly select all text
+map <C-a> <esc>ggVG<CR>
 
 if has ("autocmd")
     " File type detection. Indent based on filetype. Recommended.
     filetype plugin indent on
+    autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 endif
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
@@ -57,7 +66,7 @@ let g:tex_flavor='latex'
 " Fix errors with viewer not being properly set for OS X
 " There's apparently with a problem with the code meant to detect
 " environment with MacVim
-let g:Tex_ViewRule_pdf = 'open -a Preview.app' 
+let g:Tex_ViewRule_pdf = 'open -a "PDF Expert.app"' 
 
 " automatically change directory to open file 
 set autochdir
